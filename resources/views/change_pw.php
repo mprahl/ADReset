@@ -32,10 +32,10 @@
 <div class="col-md-12">
     <?php
         // Show potential feedback from the login object
-        if (flashMessage::flashIsSet('ChangePWError')) {
+        if (FlashMessage::flashIsSet('ChangePWError')) {
             FlashMessage::displayFlash('ChangePWError', 'error');
         }
-        elseif (flashMessage::flashIsSet('ChangePWMessage')) {
+        elseif (FlashMessage::flashIsSet('ChangePWMessage')) {
             FlashMessage::displayFlash('ChangePWMessage', 'message');
         }
     ?>

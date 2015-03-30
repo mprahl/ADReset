@@ -17,13 +17,13 @@ $pageTitle = 'Log In';
     <div class="col-md-12">
         <?php
             // Show potential feedback from the login object
-            if (flashMessage::flashIsSet('LoginError')) {
+            if (FlashMessage::flashIsSet('LoginError')) {
                 FlashMessage::displayFlash('LoginError', 'error');
             }
-            elseif (flashMessage::flashIsSet('LoginMessage')) {
+            elseif (FlashMessage::flashIsSet('LoginMessage')) {
                 FlashMessage::displayFlash('LoginMessage', 'message');
             }
-            elseif (flashMessage::flashIsSet('RegisterSuccess')) {
+            elseif (FlashMessage::flashIsSet('RegisterSuccess')) {
                 FlashMessage::displayFlash('RegisterSuccess', 'message');
             }
         ?>

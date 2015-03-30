@@ -21,10 +21,10 @@ $pageTitle = 'Reset Password';
 		<div class="col-md-12">
 		    <?php
 		        // Show potential feedback from the login object
-		        if (flashMessage::flashIsSet('ResetPWError')) {
+		        if (FlashMessage::flashIsSet('ResetPWError')) {
 		            FlashMessage::displayFlash('ResetPWError', 'error');
 		        }
-		        elseif (flashMessage::flashIsSet('ResetPWMessage')) {
+		        elseif (FlashMessage::flashIsSet('ResetPWMessage')) {
 		            FlashMessage::displayFlash('ResetPWMessage', 'message');
 		        }
 		    ?>

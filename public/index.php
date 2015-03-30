@@ -22,10 +22,10 @@ $pageTitle = 'Home';
 ?>
 <!-- Navigation Menu Ends -->
 <?php
-    if (flashMessage::flashIsSet('passwordSetMessage')) {
+    if (FlashMessage::flashIsSet('passwordSetMessage')) {
         FlashMessage::runJsScript('passwordSetMessage');
     }
-    elseif (flashMessage::flashIsSet('InvalidCodeError')) {
+    elseif (FlashMessage::flashIsSet('InvalidCodeError')) {
         FlashMessage::runJsScript('InvalidCodeError');
     }
 ?>

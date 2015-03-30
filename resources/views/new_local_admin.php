@@ -26,10 +26,10 @@ $pageTitle = 'New Local Administrator';
         <div class="col-md-12">
             <?php
                 // Show potential feedback from the register object
-                if (flashMessage::flashIsSet('RegisterError')) {
+                if (FlashMessage::flashIsSet('RegisterError')) {
                     FlashMessage::displayFlash('RegisterError', 'error');
                 }
-                elseif (flashMessage::flashIsSet('RegisterSuccess')) {
+                elseif (FlashMessage::flashIsSet('RegisterSuccess')) {
                     FlashMessage::displayFlash('RegisterSuccess', 'message');
                 }
                 else {

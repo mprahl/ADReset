@@ -18,16 +18,16 @@ $pageTitle = 'Settings';
 	<div class="col-md-12">
 	    <?php
 	        // Show potential feedback from the settings changes object
-            if (flashMessage::flashIsSet('ChangePWError')) {
+            if (FlashMessage::flashIsSet('ChangePWError')) {
                 FlashMessage::displayFlash('ChangePWError', 'error');
             }
-            elseif (flashMessage::flashIsSet('ChangePWMessage')) {
+            elseif (FlashMessage::flashIsSet('ChangePWMessage')) {
                 FlashMessage::displayFlash('ChangePWMessage', 'message');
             }
-            elseif (flashMessage::flashisSet('ChangeProfileMessage')) {
+            elseif (FlashMessage::flashisSet('ChangeProfileMessage')) {
             	FlashMessage::displayFlash('ChangeProfileMessage', 'message');
             }
-            elseif (flashMessage::flashisSet('ChangeProfileError')) {
+            elseif (FlashMessage::flashisSet('ChangeProfileError')) {
             	FlashMessage::displayFlash('ChangeProfileError', 'error');
             }
 	    ?>

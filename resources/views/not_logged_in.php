@@ -27,10 +27,10 @@ $pageTitle = 'Account Settings';
 <div class="col-md-12">
     <?php
         // Show potential feedback from the login object
-        if (flashMessage::flashIsSet('LoginError')) {
+        if (FlashMessage::flashIsSet('LoginError')) {
             FlashMessage::displayFlash('LoginError', 'error');
         }
-        elseif (flashMessage::flashIsSet('LoginMessage')) {
+        elseif (FlashMessage::flashIsSet('LoginMessage')) {
             FlashMessage::displayFlash('LoginMessage', 'message');
         }
     ?>

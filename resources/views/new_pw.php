@@ -24,10 +24,10 @@ $pageTitle = 'Set New Password';
 		<div class="col-md-12">
 		    <?php
 		        // Show potential feedback from the login object
-		        if (flashMessage::flashIsSet('NewPWError')) {
+		        if (FlashMessage::flashIsSet('NewPWError')) {
 		            FlashMessage::displayFlash('NewPWError', 'error');
 		        }
-		        elseif (flashMessage::flashIsSet('NewPWMessage')) {
+		        elseif (FlashMessage::flashIsSet('NewPWMessage')) {
 		            FlashMessage::displayFlash('NewPWMessage', 'message');
 		        }
 		    ?>

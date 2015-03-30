@@ -27,7 +27,7 @@
 	            if ($type == 'message'){
 		            echo '<div class="col-md-12">';
 		                echo '<div class="alert alert-success flash-alert">';
-		                    echo '<a href="#" class="close" data-dismiss="alert">&times;</a>' . flashMessage::flash($messageName);
+		                    echo '<a href="#" class="close" data-dismiss="alert">&times;</a>' . FlashMessage::flash($messageName);
 		                echo '</div><br />';
 		            echo '</div>';
 		            return true;
@@ -35,7 +35,7 @@
 	        	else {
 		    		echo '<div class="col-md-12">';
 		                echo '<div class="alert alert-danger flash-alert">';
-		                    echo '<a href="#" class="close" data-dismiss="alert">&times;</a>' . flashMessage::flash($messageName);
+		                    echo '<a href="#" class="close" data-dismiss="alert">&times;</a>' . FlashMessage::flash($messageName);
 		                echo '</div><br />';
 		            echo '</div>';
 		            return true;

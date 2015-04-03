@@ -9,14 +9,14 @@
 		public function __construct() {
 			// Set the connection settings
 			if(!$this->getConnectionSettings()) {
-				throw new Exception('The AD connection settings are not properly set');
+				throw new Exception('The Active Directory connection settings are not properly set');
 				exit();
 			}
 
 			// Connect and bind with the account specified in init.php
 			// If this fails, throw an exception
 			if (!($this->connect() && $this->bind())) {
-				throw new Exception('Unable to connect to the AD server');
+				throw new Exception('The Domain Controller could not be contacted.');
 				exit();
 			}
 		}
@@ -52,7 +52,7 @@
 			ldap_set_option($this->ad_connection, LDAP_OPT_PROTOCOL_VERSION, 3);
 			ldap_set_option($this->ad_connection, LDAP_OPT_REFERRALS, 0);
 
-			if (ldap_bind( $this->ad_connection, $this->connectionSettings['username'] . '@' . $this->connectionSettings['domainName'], $this->connectionSettings['password'] )) {
+			if (@ldap_bind( $this->ad_connection, $this->connectionSettings['username'] . '@' . $this->connectionSettings['domainName'], $this->connectionSettings['password'] )) {
 				return true;
 			}
 			else {

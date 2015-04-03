@@ -10,7 +10,7 @@
 				$this->AD_connection = new AD();
 			}
 			catch (Exception $e) {
-				$this->setErrorAndQuit('The connection to Active Directory failed. Please try again.');
+				$this->setErrorAndQuit('The Domain Controller could not be contacted.');
 			}
 		}
 

@@ -25,7 +25,7 @@
 				}
 				catch(Exception $e) {
 					Logger::log('error', $e . ' when attempting to add the new administrator group ' . $groupSAM . '.');
-					throw new Exception($e);
+					throw new Exception('The Active Directory connection failed');
 				}
 
 				if(!empty($groupResult = $AD->getGroup($groupSAM))) {
@@ -184,7 +184,7 @@
 				}
 				catch(Exception $e) {
 					Logger::log('error', $e . ' when attempting to add the new administrator group ' . $groupSAM . '.');
-					throw new Exception($e);
+					throw new Exception('The Active Directory connection failed');
 					return false;
 				}
 

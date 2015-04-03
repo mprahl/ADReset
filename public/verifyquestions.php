@@ -7,6 +7,16 @@
 	}
 	else {
 		if (isset($_GET['username'])) {
+			// Make sure ADReset can connect to Active Directory
+	    	try {
+	    		$AD = new AD();
+	    	}
+	    	catch (Exception $e) {
+	    		FlashMessage::flash('ResetPWError', sanitize($e->getMessage()));
+	    		header("Location: /resetpw.php");
+	    		exit();
+	    	}
+
 			//Check to make sure there haven't been more than 5 failed attempts
 			$systemSettings = new systemSettings();
 			$resetPW = new ResetPW();
@@ -23,13 +33,6 @@
 	    		exit();
 			}
 
-			$resetPW = new ResetPW();
-	    	if ($resetPW->getNumberOfFailedAttempts($_GET['username']) >= intval($failedAttemptsAllowed)) {
-	    		FlashMessage::flash('ResetPWError', 'You have failed to verify your secret questions too many times and your account is locked. Please contact the Help Desk for assistance.');
-	    		header("Location: /resetpw.php");
-	    		exit();
-	    	}
-
 			// Make sure the user has three questions set
 	    	$userSettings = new UserSettings();
 	    	try {
@@ -41,16 +44,6 @@
 	    	}
 	    	catch (Exception $e) {
 	    		FlashMessage::flash('ResetPWError', 'There was a database error. Please try again.');
-	    		header("Location: /resetpw.php");
-	    		exit();
-	    	}
-
-	    	// Make sure ADReset can connect to Active Directory
-	    	try {
-	    		$AD = new AD();
-	    	}
-	    	catch (Exception $e) {
-	    		FlashMessage::flash('ResetPWError', sanitize($e->getMessage()));
 	    		header("Location: /resetpw.php");
 	    		exit();
 	    	}

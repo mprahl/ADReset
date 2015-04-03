@@ -326,7 +326,7 @@
 					$AD = new AD();
 				}
 				catch(Exception $e) {
-					Logger::log('error', $e . ' when attempting set a secret question for ' . $username);
+					Logger::log('error', $e . ' when attempting to check secret questions for ' . $username);
 					throw new Exception('The Active Directory connection failed');
 				}
 
@@ -377,11 +377,11 @@
 						return true;
 					}
 					else {
-						Logger::log ('error', 'The user "' . $username . '" failed to answer their secret questions proprely but it could not be recorded due to a database error.');
+						Logger::log ('error', 'The user "' . $username . '" failed to answer their secret questions properly but it could not be recorded due to a database error.');
 					}
 				}
 				else {
-					Logger::log ('error', 'The user "' . $username . '" failed to answer their secret questions proprely but it could not be recorded due to their GUID not being found.');
+					Logger::log ('error', 'The user "' . $username . '" failed to answer their secret questions properly but it could not be recorded due to their GUID not being found.');
 				}
 			}
 

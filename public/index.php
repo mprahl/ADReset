@@ -57,7 +57,14 @@ $pageTitle = 'Home';
 				            			Please select an option below:
 				            		</p>
 				            		<p class="indexOptions">
-				            			<a href="account.php" class="btn btn-primary">Set Questions</a><br />
+				            			<?php
+				            				if (LoginCheck::isLoggedInAsAdmin()) {
+				            					echo '<a data-toggle="tooltip" data-title="This function is disabled because you are an administrator" class="btn btn-primary disabled">Set Questions</a><br />';
+				            				}
+				            				else {
+				            					echo '<a href="account.php" class="btn btn-primary">Set Questions</a><br />';
+				            				}
+				            			?>
 				            			<a href="changepw.php" class="btn btn-primary">Change Password</a><br />
 				            			<?php
 					            			if (LoginCheck::isLoggedIn()) {

@@ -120,10 +120,6 @@ a:focus, button:focus {
 	outline:0 !important;
 }
 
-ul.nav.navbar-nav li {
-	text-align: center;
-}
-
 ul.nav.navbar-nav > li > a {
 	transition: background-color .25s ease;
 		-webkit-transition: background-color .25s ease;
@@ -141,10 +137,6 @@ ul.nav.navbar-nav li a:hover {
 
 ul.navbar-nav li.dropdown.open a.dropdown-toggle {
 	background-color: #3A536B !important;
-}
-
-ul.navbar-nav li.dropdown a.dropdown-toggle {
-	text-align: center;
 }
 
 .topHeader {

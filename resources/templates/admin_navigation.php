@@ -17,7 +17,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="/index.php">Home</a></li>
                 <li class="dropdown">
-					<a data-toggle="dropdown" class="dropdown-toggle">Manage <b class="caret"></b></a>
+					<a data-toggle="dropdown" class="dropdown-toggle" href="#">Manage <b class="caret"></b></a>
 					<ul role="menu" class="dropdown-menu">
 						<li><a class="connectionSettingsLink" href="#">Connection Settings</a></li>
                         <li class="divider"></li>

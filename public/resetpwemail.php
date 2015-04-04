@@ -1,7 +1,6 @@
 <?php
 	require_once('../resources/core/init.php');
 
-	$login = new ADLogin();
 	$systemSettings = new SystemSettings;
 	$isEmailResetEnabled = $systemSettings->getOtherSetting('emailresetenabled');
 

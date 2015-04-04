@@ -1,8 +1,6 @@
 <?php
 	require_once('../resources/core/init.php');
 
-	$login = new ADLogin();
-
 	if (LoginCheck::isLoggedIn()) {
 	    header("location: index.php");
 	    exit();

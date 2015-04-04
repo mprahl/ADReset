@@ -22,7 +22,7 @@
 			'openssl',
 			'pcre',
 			'session',
-			'spl',
+			'SPL',
 			'standard',
 			'gd'
 		);

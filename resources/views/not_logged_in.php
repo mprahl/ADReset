@@ -2,6 +2,10 @@
 <?php
 $pageTitle = 'Account Settings';
     require_once(RESOURCE_DIR . 'templates/header.php');
+
+    if (isset($_GET['notify']) && ($_GET['notify'] == 'yes')) {
+      echo '<script src="/js/secretQuestionsNotice.js"></script>';
+    }
 ?>
 <body>
 <!-- Navigation Menu Starts -->

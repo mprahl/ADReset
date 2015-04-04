@@ -1,5 +1,4 @@
 <?php
-	// && $_SERVER['HTTP_USER_AGENT'] == 'ADReset PowerShell'
 	// This file is used by the PowerShell script to determine if a user's secret questions are set.
 	require_once('../resources/core/init.php');
 	if (isset($_GET['username']) && !empty($_GET['username'])) {

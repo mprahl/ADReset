@@ -32,7 +32,29 @@ param (
 )
 
 process {
-    Write-Host $username
+    #Load the proper .NET Assemblies
+    Add-Type -Assembly System.ServiceModel.Web,System.Runtime.Serialization,System.Web
+
+    # This function was written by Keith Hill and taken from https://rkeithhill.wordpress.com/2009/12/06/json-serializationdeserialization-in-powershell
+    # This was necessary to use instead of Invoke-RestMethod because this needs to support PowerShell v2.
+    function Convert-JsonToXml([string]$json)
+    {
+        $bytes = [byte[]][char[]]$json
+        $quotas = [System.Xml.XmlDictionaryReaderQuotas]::Max
+        $jsonReader = [System.Runtime.Serialization.Json.JsonReaderWriterFactory]::CreateJsonReader($bytes,$quotas)
+        try
+        {
+            $xml = new-object System.Xml.XmlDocument
+  
+            $xml.Load($jsonReader)
+            return $xml
+        }
+        finally
+        {
+            $jsonReader.Close()
+        }
+    }
+
     function StartBrowser() {
         switch ($browser) {
             'IE' {
@@ -77,17 +99,18 @@ process {
     }
 
     try {
-        Add-Type -AssemblyName System.Web -ErrorAction SilentlyContinue
         $uri = $webURI + '/userstatus.php?username=' + [System.Web.HttpUtility]::UrlEncode($username)
-        $result = (Invoke-RestMethod -UserAgent "ADReset PowerShell" -Uri $uri -ErrorAction Stop).status
-        if ($result -ne $null) {
-            if ($result -eq 'incomplete') {
-                if (StartBrowser) {
+        $resultInXML = (Convert-JsonToXml (New-Object Net.WebClient).DownloadString($uri))
+        if ($resultInXML.root.status.'#text' -ne $null) {
+            if ($resultInXML.root.status.'#text' -ne $null) {
+                if ($resultInXML.root.status.'#text' -eq 'incomplete') {
+                    if (StartBrowser) {
+                        return $true
+                    }
+                }
+                elseif (($resultInXML.root.status.'#text' -eq 'complete') -or ($resultInXML.root.status.'#text' -eq 'restricted')) {
                     return $true
                 }
-            }
-            elseif (($result -eq 'complete') -or ($result -eq 'restricted')) {
-                return $true
             }
         }
     }

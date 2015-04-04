@@ -10,7 +10,7 @@ elseif (isset($_POST['changeProfile'])) {
 }
 
 $login = new Login();
-if ($login->isUserLoggedIn() == true) {
+if (LoginCheck::isLoggedIn()) {
     if (!isset($userInfo)) {
 		$userInfo = new UserInfo();
     }

@@ -6,7 +6,7 @@
 	$isEmailResetEnabled = $systemSettings->getOtherSetting('emailresetenabled');
 
 	// If they are logged in then they shouldn't be resetting their password. In this case, redirect them to home.
-	if ($login->isUserLoggedIn() == true) {
+	if (LoginCheck::isLoggedIn()) {
 	    header("location: /index.php");
 	    exit();
 	}

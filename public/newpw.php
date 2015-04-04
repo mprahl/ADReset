@@ -3,7 +3,7 @@
 
 	$login = new ADLogin();
 
-	if ($login->isUserLoggedIn() == true) {
+	if (LoginCheck::isLoggedIn()) {
 	    header("location: index.php");
 	    exit();
 	}

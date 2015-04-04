@@ -9,8 +9,7 @@ elseif (isset($_POST['changeProfile'])) {
     $userInfo->setProfile($_SESSION['user_name']);
 }
 
-$login = new Login();
-if (LoginCheck::isLoggedIn()) {
+if (LoginCheck::isLoggedInAsAdmin()) {
     if (!isset($userInfo)) {
 		$userInfo = new UserInfo();
     }
@@ -18,6 +17,6 @@ if (LoginCheck::isLoggedIn()) {
     require_once(RESOURCE_DIR . "views/local_admin/usersettings.php");
 
 } else {
-    header('Location: /admin.php');
+    header('Location: /localadmin.php');
     exit();
 }

@@ -18,7 +18,7 @@
 	    	}
 
 			//Check to make sure there haven't been more than 5 failed attempts
-			$systemSettings = new systemSettings();
+			$systemSettings = new SystemSettings();
 			$resetPW = new ResetPW();
 			if ($failedAttemptsAllowed = $systemSettings->getOtherSetting('failedattemptsallowed')) {
 				if ($resetPW->getNumberOfFailedAttempts($_GET['username']) >= intval($failedAttemptsAllowed)) {

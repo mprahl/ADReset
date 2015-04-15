@@ -207,7 +207,7 @@ class ADLogin {
 
     public function logout() {
         if (isset($_SESSION['user_name'])) {
-            Logger::log ('audit', 'Logout Success: The user "' . $_SESSION['user_name'] .  '"" logged out');
+            Logger::log ('audit', 'Logout Success: The user "' . $_SESSION['user_name'] .  '" logged out');
         }
         
         // If the page GET request was set, then redirect them to that page after log out. If not, redirect them to the homepage.

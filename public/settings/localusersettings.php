@@ -2,7 +2,7 @@
 require_once('../../resources/core/init.php');
 
 if (isset($_POST['changePassword'])) {
-    $changePassword = new changePassword();
+    $changePassword = new ChangePassword();
 }
 elseif (isset($_POST['changeProfile'])) {
 	$userInfo = new UserInfo();

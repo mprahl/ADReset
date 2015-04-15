@@ -73,7 +73,7 @@
 		    		exit();
 		    	}
 
-		    	$resetPW = new resetPW();
+		    	$resetPW = new ResetPW();
 		    	// Make sure the user is allowed to reset their password
 		    	if (!$resetPW->isUserAllowedToReset($_POST['username'], $AD)) {
 		    		FlashMessage::flash('ResetPWError', 'You are not permitted to use this feature. Please contact the Help Desk for assistance.');

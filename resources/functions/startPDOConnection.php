@@ -11,7 +11,7 @@
 			return $db_connection;
 		}
 		catch (PDOException $e) {
-			// Eventually log the exception
+			Logger::log ('error', 'Database Connection Error: ' . $e->getMessage());
 			return false;
 		}
 	}

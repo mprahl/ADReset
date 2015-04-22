@@ -268,7 +268,7 @@
 									$username = $AD->getUserFromGUID($GUID)['samaccountname'];
 									if (isset($username)) {
 										if ($AD->unlockAccount($username) && $AD->setPassword($username, $_POST['user_password_new'])) {
-											Logger::log ('audit', 'Reset Success: A password was reset via an email request for the user "' . $username . '"');
+											Logger::log ('audit', 'Reset Success: A password was reset for the user "' . $username . '"');
 											// Then clean up the reset password codes from the database since the password reset was succesfull
 											$this->cleanUpUserCodes($GUID);
 											return true;

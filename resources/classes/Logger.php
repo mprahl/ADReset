@@ -7,7 +7,25 @@
 			}
 
 			if (isset($fileName) && isset($message) && isset($messageType)) {
-				$messageToLog = $_SERVER['REMOTE_ADDR'] . ' - ' . date ("Y-m-d H:i:s") . ' - ' . $messageType . ' - ' . $message . "\n";
+				if (isset($_SESSION['user_name']) && !empty($_SESSION['user_name'])) {
+					$messageToLog = array(
+						'clientip' => $_SERVER['REMOTE_ADDR'],
+						'time' =>  date ("Y-m-d H:i:s"),
+						'user' => $_SESSION['user_name'],
+						'messagetype' => $messageType,
+						'message' => $message
+					);
+				}
+				else {
+					$messageToLog = array(
+						'clientip' => $_SERVER['REMOTE_ADDR'],
+						'time' =>  date ("Y-m-d H:i:s"),
+						'messagetype' => $messageType,
+						'message' => $message
+					);
+				}
+
+				$messageToLog = json_encode($messageToLog) . "\n";
 				
 				if ($file = fopen ($fileName, 'a')) {
 					if (flock ($file, LOCK_EX)) {

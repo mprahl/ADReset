@@ -33,5 +33,5 @@
 	//Function to start the database connection
 	require_once(RESOURCE_DIR . 'functions/startPDOConnection.php');
 
-	//Functio to send emails
+	//Function to send emails
 	require_once(RESOURCE_DIR . 'functions/sendEmail.php');

@@ -22,5 +22,18 @@ Written by Matthew Prahl except for the PHPMailer and Captcha classes
 <img src="screenshots/1%20Home%20-%20Desktop.jpg" alt="Home" width="75%" max-width="1300"/>
 
 <h4>Home Screen - Responsive</h4>
-<img src="screenshots/2%20Home%20-%20Responsive.jpg" alt="Home" width="25%" max-width="500"/>
+<img src="screenshots/2%20Home%20-%20Responsive.jpg" alt="Home Responsive" width="25%" max-width="500"/>
 
+<h4>Answering Secret Questions</h4>
+<img src="screenshots/3%20Secret%20Questions.jpg" alt="Answering Secret Questions" width="75%" max-width="1300"/>
+
+<h4>Selecting A New Password After Answering Questions</h4>
+<img src="screenshots/4%20New%20Password.jpg" alt="Selecting A New Password" width="75%" max-width="1300"/>
+
+<h4>Change Password</h4>
+<img src="screenshots/5%20Change%20Password.jpg" alt="Changing A Password" width="75%" max-width="1300"/>
+
+<h4>System Settings</h4>
+<img src="screenshots/6%20System%20Settings%201.jpg" alt="Home" width="75%" max-width="1300"/>
+
+<img src="screenshots/7%20System%20Settings%202.jpg" alt="Home" width="75%" max-width="1300"/>

@@ -18,12 +18,9 @@ Please browse to the "docs" folder for documentation on how to install and admin
 Written by Matthew Prahl except for the PHPMailer and Captcha classes
 
 ## Screenshots
-<p align="center">
 <h4>Home Screen</h4>
-
 <img src="screenshots/1%20Home%20-%20Desktop.jpg" alt="Home" width="75%" max-width="1300"/>
 
 <h4>Home Screen - Responsive</h4>
-
 <img src="screenshots/2%20Home%20-%20Responsive.jpg" alt="Home" width="25%" max-width="500"/>
-</p>
+

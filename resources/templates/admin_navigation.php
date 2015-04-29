@@ -13,20 +13,20 @@
         </div>
         <!-- Navigation links for toggling -->
         <div id="navbarCollapse" class="collapse navbar-collapse">
-			<!-- Right links on the navbar -->
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/index.php">Home</a></li>
+            <!-- Right links on the navbar -->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/index.php">Home</a></li>
                 <li class="dropdown">
-					<a data-toggle="dropdown" class="dropdown-toggle" href="#">Manage <b class="caret"></b></a>
-					<ul role="menu" class="dropdown-menu">
-						<li><a class="connectionSettingsLink" href="#">Connection Settings</a></li>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Manage <b class="caret"></b></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a class="connectionSettingsLink" href="#">Connection Settings</a></li>
                         <li class="divider"></li>
-						<li><a href="/settings/systemsettings.php">System Settings</a></li>
-					</ul>
-				</li>
+                        <li><a href="/settings/systemsettings.php">System Settings</a></li>
+                    </ul>
+                </li>
                 <li><a href="/changepw.php">Change Password</a></li>
-				<li><a href="/account.php?logout">Logout</a></li>
-			</ul>
+                <li><a href="/account.php?logout">Logout</a></li>
+            </ul>
         </div>
     </div>
 </nav>

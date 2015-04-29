@@ -5,12 +5,12 @@
 <html lang="en">
 <?php
 $pageTitle = 'Set New Password';
-	require_once(RESOURCE_DIR . 'templates/header.php');
+    require_once(RESOURCE_DIR . 'templates/header.php');
 ?>
 <body>
 <!-- Navigation Menu Starts -->
 <?php
-	require_once(RESOURCE_DIR . 'templates/not_loggedin_navigation.php');
+    require_once(RESOURCE_DIR . 'templates/not_loggedin_navigation.php');
 ?>
 <!-- Navigation Menu Ends -->
 <!-- Content Starts -->
@@ -21,21 +21,21 @@ $pageTitle = 'Set New Password';
     <form class="form-horizontal" method="post" action="newpw.php" name="newpwform">
       <fieldset>
         <h2 class="topHeader">Set A New Password</h2>
-		<div class="col-md-12">
-		    <?php
-		        // Show potential feedback from the login object
-		        if (FlashMessage::flashIsSet('NewPWError')) {
-		            FlashMessage::displayFlash('NewPWError', 'error');
-		        }
-		        elseif (FlashMessage::flashIsSet('NewPWMessage')) {
-		            FlashMessage::displayFlash('NewPWMessage', 'message');
-		        }
-		    ?>
-		</div>
-		<div class="col-md-12">
+        <div class="col-md-12">
+            <?php
+                // Show potential feedback from the login object
+                if (FlashMessage::flashIsSet('NewPWError')) {
+                    FlashMessage::displayFlash('NewPWError', 'error');
+                }
+                elseif (FlashMessage::flashIsSet('NewPWMessage')) {
+                    FlashMessage::displayFlash('NewPWMessage', 'message');
+                }
+            ?>
+        </div>
+        <div class="col-md-12">
             <div class="well resetPwWell">
-			To reset your password, simply type in your new password in each text box and click on the &quot;Reset Password&quot; button. Please remember that your new password must conform to the company's <a href="#" class="tool-tip" data-html="true" data-toggle="tooltip" data-placement="top" data-original-title="<?php  echo ADPasswordPolicyWritten() ?>">password policy</a>.
-			</div>
+            To reset your password, simply type in your new password in each text box and click on the &quot;Reset Password&quot; button. Please remember that your new password must conform to the company's <a href="#" class="tool-tip" data-html="true" data-toggle="tooltip" data-placement="top" data-original-title="<?php  echo ADPasswordPolicyWritten() ?>">password policy</a>.
+            </div>
         </div>
         <div class="form-group">
             <label for="login_input_password_new" class="col-lg-2 control-label">Password:</label>

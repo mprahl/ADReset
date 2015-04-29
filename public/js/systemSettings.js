@@ -1,13 +1,13 @@
 $(document).ready(function(){
     $('form.deleteAdminGroup input.btn-link').on('click', function(e){
-    	bootbox.confirm("Are you sure you want to remove this administrative group?", function(result) {
-			if (result) {
-				$(e.target).closest("form").submit();
-				return true;
-			}
-		}); 
+        bootbox.confirm("Are you sure you want to remove this administrative group?", function(result) {
+            if (result) {
+                $(e.target).closest("form").submit();
+                return true;
+            }
+        }); 
 
-		return false;
+        return false;
     });
 
     $('form.deleteResetGroup input.btn-link').on('click', function(e){
@@ -65,6 +65,6 @@ $(document).ready(function(){
         }, 500);
 
         return false;
-    	
+        
     });
 });

@@ -1,7 +1,7 @@
     <?php
     require_once(__DIR__ . '/../core/init.php');
 
-    // This the local login class was heavily inspired by this source code https://github.com/panique/php-login-minimal
+    // The login class was heavily inspired by this source code https://github.com/panique/php-login-minimal
     class Login {
         private $db_connection = null;
 

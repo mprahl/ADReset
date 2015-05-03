@@ -12,7 +12,7 @@
             'type' => 'mysql',
             'host' => '127.0.0.1',
             'username' => 'adresetuser',
-            'password' => '6bX&7UI$ysq!jJUB',
+            'password' => 'password',
             'db_name' => 'adreset'
         ),
 

@@ -224,9 +224,8 @@
     </code>
     <ul>
       <li>
-        For just HTTP (no SSL):
-      </li>
-      <pre>
+        For just HTTP (no SSL):<br />
+<pre>
 &lt;VirtualHost *:80&gt;
   ServerAdmin webmaster@localhost
   DocumentRoot /var/www/adreset/public
@@ -234,7 +233,51 @@
   ErrorLog ${APACHE_LOG_DIR}/error.log
   CustomLog ${APACHE_LOG_DIR}/access.log combined
 &lt;/VirtualHost&gt;
-      </pre>
+</pre>
+      </li>
+      
+      <li>
+        For SSL (HTTPS):
+<pre>
+&lt;VirtualHost *:80&gt;
+  ServerAdmin webmaster@localhost
+  DocumentRoot /var/www/adreset/public
+  
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+&lt;/VirtualHost&gt;
+
+&lt;IfModule mod_ssl.c&gt;
+  &lt;VirtualHost *:443&gt;
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/adreset/public
+    
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+    
+    SSLEngine on
+    #Prevents SSL Strip
+    Header set Strict-Transport-Security "max-age=16070400; includeSubDomains"
+    SSLCertificateFile /etc/apache2/certificates/cert.pem
+    SSLCertificateKeyFile /etc/apache2/certificates/key.pem
+    
+    &lt;FilesMatch &quot;\.(cgi|shtml|phtml|php)$&quot;&gt;
+      SSLOptions +StdEnvVars
+    &lt;/FilesMatch&gt;
+    
+    BrowserMatch "MSIE [2-6]" \
+    nokeepalive ssl-unclean-shutdown \
+    downgrade-1.0 force-response-1.0
+    
+    # MSIE 7 and newer should be able to use keepalive
+    BrowserMatch "MSIE [17-9]" ssl-unclean-shutdown
+  &lt;/VirtualHost&gt;
+&lt;/IfModule&gt;
+</pre>
+      </li>
     </ul>
   </li>
 

@@ -295,4 +295,31 @@
   <code>
     http://ip.add.re.ss/installer.php
   </code>
+  
+  <li>On this page, it will make sure you have all the PHP modules that are required. If any are missing, go back to the section “Installing Apache, MySQL, and PHP”. If you followed the directions correctly, you should see a screen that looks like this:<br /><br />
+    <img src="documentation images/Installer - 1.png" />
+  </li>
+  
+  <li>Now enter the settings you configured in step 2. It should look something like this:<br /><br />
+    <img src="documentation images/Installer - 2.png" />
+  </li>
+  
+  <li>Once the form is filled out, click on “Connect”</li>
+  
+  <li>Afterwards, you must create a local administrator account to initially configure ADReset. Here is an example:<br /><br />
+    <img src="documentation images/Installer - 3.png" />
+  </li>
+  
+  <li>Once the form is filled out, click on “Create”</li>
+  
+  <li>If successful, you should see the following message:<br /><br />
+    <img src="documentation images/Installer - 4.png" />
+  </li>
+  
+  <li>Go back to your command-line shell on Ubuntu and delete installer.php with the following command:</li>
+  <code>
+    sudo rm /var/www/adreset/public/installer.php
+  </code>
+  
+  <li>Go back to ADReset and login with your new Administrator account.</li>
 </ol>

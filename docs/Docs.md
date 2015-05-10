@@ -1,39 +1,83 @@
-# ADReset
+# ADReset Documentation
 
-## About
-ADReset is a self-service Active Directory password reset portal. Written with Bootstrap 3, it is fully responsive, and thus works flawlessly on any device, including mobile phones. ADReset allows a user to securely reset their password using secret questions defined by an administrator or by having a reset link sent to their email (the email address is defined in Active Directory). The server-side code is written entirely in PHP and thus will work on any or webserver operating system.
+## Installing ADReset on Ubuntu 14.04
 
-## Key Features
-- Password Reset Via Secret Questions
-- Password Reset Via Email
-- Change Password Using Old Password
-- Active Directory Security Groups Limit Who Is Allowed To Reset Their Password
-- Entirely Configurable Via The Web Interface
-- PowerShell Script To See If A User's Questions Have Been Set
+### Prerequisites
+1. Ubuntu 14.04 server with:
+  * Sudo/Root access
+  * DNS configured to point to at least one Domain Controller
+  * At least one Domain Controller with LDAPS enabled
 
-## Documentation
-Please browse to the "docs" folder for documentation on how to install and administer ADReset
+### Installing Apache, MySQL, and PHP:
+<ol>
+  <li>Update Ubuntu with the following commands:</li>
+    <code>
+      sudo apt-get update
+    </code><br />
+    <code>
+      sudo apt-get dist-upgrade
+    </code>
+    
+  <li>Install the Apache2 webserver with the following command:</li>
+    <code>
+      sudo apt-get install apache2
+    </code>
+    
+  <li>Install MySQL with the following command:</li>
+  <code>
+    sudo apt-get install mysql-server php5-mysql
+  </code>
+  
+  <li>When prompted, enter a strong root password for MySQL.</li>
+  
+  <li>Initialize and secure MySQL with the following commands:</li>
+  <code>
+    sudo mysql_install_db
+  </code><br />
+  <code>
+    sudo mysql_secure_installation
+  </code>
+  
+  <li>
+    After running the “mysql_secure_installation” command, enter “Y” for:
+    <ol>
+      <li>Remove anonymous users</li>
+      <li>Disallow root login remotely</li>
+      <li>Remove test database and access to it</li>
+      <li>Reload privilege tables now</li>
+    </ol>
+  </li>
+  
+  <li>Install PHP and the appropriate modules:</li>
+  <code>
+    sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt php5-ldap php5-gd
+  </code>
+  
+  <li>Enable PHP mcrypt with the following command (may not be necessary):</li>
+  <code>
+    sudo php5enmod mcrypt
+  </code>
+  
+  <li>Tell Apache to prefer index.php over index.html by editing dir.conf with the following command:</li>
+  <code>
+    sudo nano /etc/apache2/mods-enabled/dir.conf
+  </code>
+  
+  <li>In dir.conf, change the following:</li>
+  <code>
+    DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
+  </code><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;To:<br />
+  <code>
+    DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+  </code>
+  
+  <li>Close and save dir.conf</li>
+  
+  <li>Restart Apache with the following command:</li>
+  <code>
+    sudo service apache2 restart
+  </code>
+</ol>
 
-## Credits
-Written by Matthew Prahl except for the PHPMailer and Captcha classes
-
-## Screenshots
-<h4>Home Screen</h4>
-<img src="screenshots/1%20Home%20-%20Desktop.jpg" alt="Home" width="75%" max-width="1300"/>
-
-<h4>Home Screen - Responsive</h4>
-<img src="screenshots/2%20Home%20-%20Responsive.jpg" alt="Home Responsive" width="25%" max-width="500"/>
-
-<h4>Answering Secret Questions</h4>
-<img src="screenshots/3%20Secret%20Questions.jpg" alt="Answering Secret Questions" width="75%" max-width="1300"/>
-
-<h4>Selecting A New Password After Answering Questions</h4>
-<img src="screenshots/4%20New%20Password.jpg" alt="Selecting A New Password" width="75%" max-width="1300"/>
-
-<h4>Change Password</h4>
-<img src="screenshots/5%20Change%20Password.jpg" alt="Changing A Password" width="75%" max-width="1300"/>
-
-<h4>System Settings</h4>
-<img src="screenshots/6%20System%20Settings%201.jpg" alt="Home" width="75%" max-width="1300"/>
-
-<img src="screenshots/7%20System%20Settings%202.jpg" alt="Home" width="75%" max-width="1300"/>
+### Installing ADReset on Apache:

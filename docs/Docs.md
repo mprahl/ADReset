@@ -227,12 +227,13 @@
         For just HTTP (no SSL):
       </li>
       <pre>
-<VirtualHost *:80>
-    ServerAdmin webmaster@localhost
-    DocumentRoot /var/www/adreset/public
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
+&lt;VirtualHost *:80&gt;
+  ServerAdmin webmaster@localhost
+  DocumentRoot /var/www/adreset/public
+  
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+&lt;/VirtualHost&gt;
       </pre>
     </ul>
   </li>

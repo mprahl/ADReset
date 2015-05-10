@@ -67,7 +67,7 @@
   <code>
     DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
   </code><br />
-  &nbsp;&nbsp;&nbsp;&nbsp;To:<br />
+  To:<br />
   <code>
     DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
   </code>

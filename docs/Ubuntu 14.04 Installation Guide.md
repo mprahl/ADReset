@@ -280,5 +280,19 @@
       </li>
     </ul>
   </li>
+  
+  <li>Enable the new site with the following command:</li>
+  <code>
+    sudo a2ensite adreset.conf
+  </code>
 
+  <li>Restart Apache with the following command:</li>
+  <code>
+    sudo service apache2 restart
+  </code>
+  
+  <li>From any computer on the network, navigate to ADReset’s installer (replacing ip.add.re.ss with your web server’s IP address):</li>
+  <code>
+    http://ip.add.re.ss/installer.php
+  </code>
 </ol>

@@ -322,4 +322,16 @@
   </code>
   
   <li>Go back to ADReset and login with your new Administrator account.</li>
+  
+  <li>Upon login, you should be taken to the “Connection Settings” page. Here you will specify how to connect to Active Directory. Here is an example where sky.local is the domain:<br /><br />
+    <img src="documentation images/Installer - 5.png" />
+  </li>
+  
+  <li>Make sure that the Domain Controller you specify has LDAPS enabled. If all of your Domain Controllers have LDAPS enabled, it is recommended to put the domain name in the Domain Controller field (i.e. sky.local) as this will allow ADReset to connect to any available Domain Controller.</li>
+  
+  <li>If the connection was successful, you will receive the following message:<br /><br />
+    <img src="documentation images/Installer - 6.png" />
+  </li>
+  
+  <li>Now, it is time configure the System Settings, to do so, click on “Manage” then click on “System Settings”</li>
 </ol>

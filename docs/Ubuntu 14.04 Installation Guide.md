@@ -101,12 +101,12 @@
     FLUSH PRIVILEGES; QUIT;
   </code>
   
-  <li>In order to have ADReset communicate over LDAPS, it needs to have the appropriate Windows Active Directory Certificate Services (ADCS) CA certificate in BASE64 format. That certificate must be exported. To do so, you can follow <a href="Retrieving the CA Certificate used for LDAPS.md">this tutorial</a>. Once the contents of the certificate are copied, create a new file with the following command:</li>
+  <li>In order to have ADReset communicate over LDAPS, it needs to have the appropriate Active Directory Certificate Services (ADCS) CA certificate in BASE64 format. That certificate must be exported. To do so, you can follow <a href="Retrieving the CA Certificate used for LDAPS.md">this tutorial</a>. Once the contents of the certificate are copied, create a new file with the following command:</li>
   <code>
     sudo nano /usr/local/share/ca-certificates/adca.crt
   </code>
   
-  <li>Paste the contents of the ADCD CA certificate in adca.crt and save the file.</li>
+  <li>Paste the contents of the ADCS CA certificate in adca.crt and save the file.</li>
   
   <li>Now, run the following command for Ubuntu to import the new certificate:</li>
   <code>

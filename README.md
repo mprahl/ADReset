@@ -12,7 +12,12 @@ ADReset is a self-service Active Directory password reset portal. Written with B
 - PowerShell Script To See If A User's Questions Have Been Set
 
 ## Documentation
-Please browse to the "docs" folder for documentation on how to install and administer ADReset
+<ul>
+  <li>Ubuntu 14.04 Installation Guide</li>
+  <li>Retrieving the CA Certificate used for LDAPS</li>
+</ul>
+
+For more documentation please browse to the "docs" folder
 
 ## Credits
 Written by Matthew Prahl except for the PHPMailer and Captcha classes

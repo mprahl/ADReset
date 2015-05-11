@@ -13,8 +13,8 @@ ADReset is a self-service Active Directory password reset portal. Written with B
 
 ## Documentation
 <ul>
-  <li>Ubuntu 14.04 Installation Guide</li>
-  <li>Retrieving the CA Certificate used for LDAPS</li>
+  <li><a href="docs/Ubuntu 14.04 Installation Guide.md">Ubuntu 14.04 Installation Guide</a></li>
+  <li><a href="docs/Retrieving the CA Certificate used for LDAPS.md">Retrieving the CA Certificate used for LDAPS</a></li>
 </ul>
 
 For more documentation please browse to the "docs" folder

@@ -9,7 +9,7 @@
 
 ### Exporting the CA Certificate
 <ol>
-  <li>Open the Certificates MMC by running:</li>
+  <li>Open the "Certificates" MMC by running:</li>
   <code>
     certmgr.msc
   </code>

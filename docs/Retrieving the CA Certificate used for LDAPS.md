@@ -14,7 +14,7 @@
     certmgr.msc
   </code>
   
-  <li>Expand "Trusted Root Certificate Authorities", and click on "Certificates"<br /><br />
+  <li>Expand "Trusted Root Certificate Authorities" => click on "Certificates"<br /><br />
     <img src="documentation images/Certificate - 1.png" />
   </li>
   

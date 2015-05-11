@@ -1,7 +1,7 @@
 # ADReset
 
 ## About
-ADReset is a self-service Active Directory password reset portal. Written with Bootstrap 3, it is fully responsive, and thus works flawlessly on any device, including mobile phones. ADReset allows a user to securely reset their password using secret questions defined by an administrator or by having a reset link sent to their email (the email address is defined in Active Directory). The server-side code is written entirely in PHP and thus will work on any or webserver operating system.
+ADReset is a self-service Active Directory password reset portal. Written with Bootstrap 3, it is fully responsive, and thus works flawlessly on any device, including mobile phones. ADReset allows a user to securely reset their password using secret questions defined by an administrator or by having a reset link sent to their email (the email address is defined in Active Directory). The server-side code is written entirely in PHP and thus it should work on any webserver or operating system.
 
 ## Key Features
 - Password Reset Via Secret Questions

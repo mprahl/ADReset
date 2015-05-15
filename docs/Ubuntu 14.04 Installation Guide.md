@@ -98,7 +98,10 @@
     GRANT ALL PRIVILEGES ON adreset.* TO 'adresetuser'@'127.0.0.1';
   </code><br />
   <code>
-    FLUSH PRIVILEGES; QUIT;
+    FLUSH PRIVILEGES;
+  </code><br />
+  <code>
+    QUIT;
   </code>
   
   <li>In order to have ADReset communicate over LDAPS, it needs to have the appropriate Active Directory Certificate Services (ADCS) CA certificate in BASE64 format. That certificate must be exported. To do so, you can follow <a href="Retrieving the CA Certificate used for LDAPS.md">this tutorial</a>. Once the contents of the certificate are copied, create a new file with the following command:</li>

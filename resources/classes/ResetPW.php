@@ -22,10 +22,10 @@
             if (isset($username) && isset($AD)) {
                 if ($systemSettings = new SystemSettings()) {
                     if ($resetGroups = $systemSettings->getResetGroups()) {
-                        if ($adminGroups = $systemSettings->getAdminGroups()) {
-                            try {
-                                $userGroups = $AD->getMembership($username);
-                                
+                        try {
+                            $userGroups = $AD->getMembership($username);
+
+                            if ($adminGroups = $systemSettings->getAdminGroups()) {
                                 // If the user is an Admin, don't let them reset their password
                                 foreach ($userGroups as $userGroup) {
                                     foreach ($adminGroups as $adminGroup) {
@@ -34,20 +34,20 @@
                                         }
                                     }
                                 }
+                            }
 
-                                // Check to see if they are in the reset group
-                                foreach ($userGroups as $userGroup) {
-                                    foreach ($resetGroups as $resetGroup) {
-                                        if ($userGroup == $resetGroup['samaccountname']) {
-                                            return true;
-                                        }
+                            // Check to see if they are in the reset group
+                            foreach ($userGroups as $userGroup) {
+                                foreach ($resetGroups as $resetGroup) {
+                                    if ($userGroup == $resetGroup['samaccountname']) {
+                                        return true;
                                     }
                                 }
                             }
-                            catch(Exception $e) {
-                                Logger::log('error', $e . ' when attempting to check the user membership of ' . $username);
-                                return false;
-                            }
+                        }
+                        catch(Exception $e) {
+                            Logger::log('error', $e . ' when attempting to check the user membership of ' . $username);
+                            return false;
                         }
                     }
                 }

@@ -36,7 +36,7 @@
   
   <li>Click on "Next" => Click on "Finish"</li>
   
-  <li>Navigate to where you saved "LDAPS-CA.cer". If you are installing ADReset on Windows, just copy the certificate file over to C:\openldap\sysconf, otherwise, right-click on it => hover on "Open With" => click on "Notepad"<br /><br />
+  <li>Navigate to where you saved "LDAPS-CA.cer". If you are installing ADReset on Windows, just copy the certificate file over to C:\openldap\sysconf on the IIS server, otherwise, right-click on it => hover on "Open With" => click on "Notepad"<br /><br />
     <img src="documentation images/Certificate - 6.png" />
   </li>
   

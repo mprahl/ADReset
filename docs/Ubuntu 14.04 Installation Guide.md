@@ -6,7 +6,7 @@
 1. Ubuntu 14.04 server with:
   * Sudo/Root access
   * DNS configured to point to at least one Domain Controller
-  * At least one Domain Controller with LDAPS enabled
+  * At least one Domain Controller with LDAPS enabled (Admin access to the Domain Controller maybe required)
 
 ### Installing Apache, MySQL, and PHP:
 <ol>

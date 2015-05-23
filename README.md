@@ -18,8 +18,6 @@ ADReset is a self-service Active Directory password reset portal. Written with B
   <li><a href="docs/Retrieving the CA Certificate used for LDAPS.md">Retrieving the CA Certificate used for LDAPS</a></li>
 </ul>
 
-For more documentation please browse to the "docs" folder
-
 ## Credits
 Written by Matthew Prahl except for the PHPMailer and Captcha classes
 

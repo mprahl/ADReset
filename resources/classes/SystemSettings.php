@@ -642,7 +642,7 @@
             return false;
         }
 
-        private function changeSecretQuestionStatus($secretQuestion) {
+        private function changeSecretQuestionStatus() {
             if (isset($secretQuestion)) {
                 $stmt = $this->db_connection->prepare('SELECT secretquestion, enabled FROM secretquestions WHERE secretquestion = ?');
                 if ($stmt->execute(array($secretQuestion))) {
